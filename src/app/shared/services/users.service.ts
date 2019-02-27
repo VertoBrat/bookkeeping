@@ -1,9 +1,8 @@
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
-import {User} from '../models/user.model';;
-import {Http} from '@angular/http';
-import {map} from 'rxjs/operators';
+
+import {User} from '../models/user.model';
+
 
 @Injectable()
 export class UsersService {
@@ -11,6 +10,10 @@ export class UsersService {
 
   getUserByEmail(params:HttpParams) {
     return this.http.get<User>('http://localhost:3000/users', {params: params});
+  }
+
+  createNewUser(user: User) {
+    return this.http.post<User>('http://localhost:3000/users', user);
   }
 
 }

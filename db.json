@@ -5,6 +5,12 @@
       "email": "wfm@mail.ru",
       "password": "12345678",
       "name": "Администратор"
+    },
+    {
+      "email": "mfocus@mail.ru",
+      "password": "12345678",
+      "name": "Dima",
+      "id": 2
     }
   ],
   "bill": {

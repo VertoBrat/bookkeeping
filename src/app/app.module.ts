@@ -8,6 +8,7 @@ import {SharedModule} from './shared/shared.module';
 import {HttpModule} from '@angular/http';
 import {UsersService} from './shared/services/users.service';
 import {HttpClientModule} from '@angular/common/http';
+import {AuthService} from './shared/services/auth.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     SharedModule
   ],
-  providers: [UsersService],
+  providers: [UsersService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
