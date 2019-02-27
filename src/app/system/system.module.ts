@@ -10,6 +10,10 @@ import { PlaningPageComponent } from './planing-page/planing-page.component';
 import { RecordsPageComponent } from './records-page/records-page.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { HeaderComponent } from './shared/components/header/header.component';
+import {DropdownDirective} from './shared/directives/dropdown.directive';
+import { BillCardComponent } from './bill-page/bill-card/bill-card.component';
+import { CurrencyCardComponent } from './bill-page/currency-card/currency-card.component';
+import {BillService} from './shared/services/bill.service';
 
 @NgModule({
   declarations:[
@@ -19,12 +23,16 @@ import { HeaderComponent } from './shared/components/header/header.component';
     PlaningPageComponent,
     RecordsPageComponent,
     SidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    DropdownDirective,
+    BillCardComponent,
+    CurrencyCardComponent
   ],
   imports:[
     CommonModule,
     SharedModule,
     SystemRoutingModule
-  ]
+  ],
+  providers:[BillService]
 })
 export class SystemModule {}
