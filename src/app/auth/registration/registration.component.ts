@@ -42,9 +42,10 @@ export class RegistrationComponent implements OnInit {
       }));
   }
 
+  //асинхронный валидатор поля email
   forbiddenEmails(control: FormControl): Promise<any> {
     const param = new HttpParams().set('email', control.value);
-    return new Promise<any>((resolve, reject)=>{
+    return new Promise<any>((resolve)=>{
       this.userService.getUserByEmail(param)
         .subscribe((user: User)=>{
           if (user[0]) {

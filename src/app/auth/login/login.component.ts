@@ -57,6 +57,7 @@ export class LoginComponent implements OnInit {
             this.message.text = '';
             localStorage.setItem('user', JSON.stringify(user[0]));
             this.authService.login();
+            this.router.navigate(['/system']);
           } else {
             this.showMessage(
               {
