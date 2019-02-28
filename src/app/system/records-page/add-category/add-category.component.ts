@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'pht-add-category',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCategoryComponent implements OnInit {
 
+  form:FormGroup;
+
   constructor() { }
 
   ngOnInit() {
+    this.form = new FormGroup({
+      'name':new FormControl('',[Validators.required], ),
+      'limit':new FormControl('', [Validators.required, Validators.min(0)])
+    });
+  }
+
+  onSubmit() {
+
+  }
+
+  forbiddenName(control: FormControl): Promise<any> {
+
   }
 
 }
