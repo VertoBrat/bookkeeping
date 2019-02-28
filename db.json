@@ -38,6 +38,11 @@
       "id": 3,
       "name": "Машина",
       "capacity": 7000
+    },
+    {
+      "name": "Гора",
+      "capacity": 5000,
+      "id": 4
     }
   ],
   "events": [
