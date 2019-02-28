@@ -1,34 +1,26 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {BillService} from '../../shared/services/bill.service';
+import {Component, Input, OnInit} from '@angular/core';
 import {Bill} from '../../shared/models/bill.model';
-import {Observable} from 'rxjs/observable';
-import {Subscription} from 'rxjs';
-import 'rxjs/rx';
+
 
 @Component({
   selector: 'pht-bill-card',
   templateUrl: './bill-card.component.html',
   styleUrls: ['./bill-card.component.scss']
 })
-export class BillCardComponent implements OnInit, OnDestroy {
+export class BillCardComponent implements OnInit {
 
-  subscription: Subscription;
-  bill: Bill;
+  @Input() bill: Bill;
+  @Input() currency: any;
 
-  constructor(private billService: BillService) { }
+  dollar: number;
+  euro: number;
+
+  constructor() { }
 
   ngOnInit() {
-    this.bill = new Bill(0, 'RUB');
-   this.subscription = Observable.combineLatest(
-      this.billService.getBill(),
-      this.billService.getCurrency()
-    ).subscribe((data: [Bill, any])=>{
-      this.bill.value = data[0].value;
-    })
-  }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    const {rates} = this.currency;
+    this.euro = this.bill.value/rates['RUB'];
+    this.dollar = this.euro*rates['USD'];
   }
 
 }

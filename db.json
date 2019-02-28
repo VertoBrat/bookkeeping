@@ -11,10 +11,16 @@
       "password": "12345678",
       "name": "Dima",
       "id": 2
+    },
+    {
+      "email": "test@mail.ru",
+      "password": "12345678",
+      "name": "Gopnik",
+      "id": 3
     }
   ],
   "bill": {
-    "value": 1000,
+    "value": 100000,
     "currency": "RUB"
   },
   "categories": [
