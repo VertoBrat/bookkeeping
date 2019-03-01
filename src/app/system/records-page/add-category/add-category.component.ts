@@ -5,6 +5,7 @@ import {HttpParams} from '@angular/common/http';
 import {CategoryService} from '../../../shared/services/category.service';
 import {Category} from '../../shared/models/category.model';
 import {Router} from '@angular/router';
+import {Message} from '../../../shared/models/message.model';
 
 @Component({
   selector: 'pht-add-category',
@@ -14,11 +15,13 @@ import {Router} from '@angular/router';
 export class AddCategoryComponent implements OnInit {
 
   form:FormGroup;
+  message: Message;
 
   constructor(private categoryService: CategoryService,
               private router: Router) { }
 
   ngOnInit() {
+    this.message = new Message('success', '');
     this.form = new FormGroup({
       'name':new FormControl('',[Validators.required], this.forbiddenName.bind(this)),
       'limit':new FormControl('1', [Validators.required, Validators.min(1)])
@@ -32,7 +35,10 @@ export class AddCategoryComponent implements OnInit {
       formData.limit
     );
     this.categoryService.createNewCategory(category)
-      .subscribe((c: Category)=> this.router.navigate(['/system', 'records']))
+      .subscribe((c: Category)=> {
+        this.form.reset();
+        this.showMessage({text: 'Категория добавлена', type: 'success'})
+      })
   }
 
   forbiddenName(control: FormControl): Promise<any> {
@@ -49,6 +55,13 @@ export class AddCategoryComponent implements OnInit {
           }
         })
     });
+  }
+
+  private showMessage(message: Message) {
+    this.message = message;
+    setTimeout(() => {
+      this.message.text = '';
+    }, 2500);
   }
 
 }

@@ -14,6 +14,6 @@ export class CategoryService extends BaseApi{
   }
 
   createNewCategory(category: Category) {
-    return this.post('categories', category);
+    return this.post<Category>('categories', category);
   }
 }
