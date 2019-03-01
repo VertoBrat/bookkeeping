@@ -25,34 +25,24 @@
   },
   "categories": [
     {
-      "name": "Дом",
-      "capacity": 15000,
-      "id": 1
-    },
-    {
-      "name": "Еда",
-      "capacity": 10000,
-      "id": 2
-    },
-    {
-      "id": 3,
-      "name": "Машина",
-      "capacity": 7000
-    },
-    {
-      "name": "Гора",
-      "capacity": 5000,
-      "id": 4
-    },
-    {
-      "name": "Прикол",
-      "capacity": 10000000,
+      "name": "Еда4",
+      "capacity": 10000123123,
       "id": 5
     },
     {
-      "name": "Прикол1",
-      "capacity": 1123123123123,
+      "name": "Дом",
+      "capacity": 100000,
       "id": 6
+    },
+    {
+      "name": "Машина",
+      "capacity": 50000,
+      "id": 7
+    },
+    {
+      "name": "Продукты",
+      "capacity": 400000,
+      "id": 8
     }
   ],
   "events": [

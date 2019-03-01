@@ -4,18 +4,22 @@
   </h3>
 </div>
 
-<section class="section">
+<section class="section" *ngIf="isLoaded">
   <div class="row">
     <div class="col-md-6">
       <pht-add-event></pht-add-event>
     </div>
     <div class="col-md-6">
-      <pht-add-category></pht-add-category>
+      <pht-add-category (onCategoryAdd)="newCategoryAdded($event)"></pht-add-category>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
-      <pht-edit-category></pht-edit-category>
+      <pht-edit-category
+        [categories]="categories"
+        (onCategoryEdit)="categoryEdited($event)"
+        (onCategoryDeleted)="categoryDeleted($event)"
+      ></pht-edit-category>
     </div>
   </div>
 </section>

@@ -26,4 +26,8 @@ export class BaseApi {
     return this.http.put<T>(this.getUrl(url), model);
   }
 
+  public delete<T>(url: string): Observable<T> {
+    return this.http.delete<T>(this.getUrl(url));
+  }
+
 }

@@ -16,4 +16,16 @@ export class CategoryService extends BaseApi{
   createNewCategory(category: Category) {
     return this.post<Category>('categories', category);
   }
+
+  getCategories() {
+    return this.get<Category[]>('categories', null);
+  }
+
+  editCategory(category: Category, id: number) {
+    return  this.put<Category>(category, 'categories/' + id);
+  }
+
+  deleteCategory(id:number) {
+    return this.delete<Category>('categories/' + id);
+  }
 }

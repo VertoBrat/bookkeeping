@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpParams} from '@angular/common/http';
 
@@ -16,6 +16,8 @@ export class AddCategoryComponent implements OnInit {
 
   form:FormGroup;
   message: Message;
+
+  @Output() onCategoryAdd = new EventEmitter<Category>();
 
   constructor(private categoryService: CategoryService,
               private router: Router) { }
@@ -37,7 +39,8 @@ export class AddCategoryComponent implements OnInit {
     this.categoryService.createNewCategory(category)
       .subscribe((c: Category)=> {
         this.form.reset();
-        this.showMessage({text: 'Категория добавлена', type: 'success'})
+        this.showMessage({text: 'Категория добавлена', type: 'success'});
+        this.onCategoryAdd.emit(c);
       })
   }
 
