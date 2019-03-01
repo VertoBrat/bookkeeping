@@ -25,11 +25,6 @@
   },
   "categories": [
     {
-      "name": "Еда4",
-      "capacity": 10000123123,
-      "id": 5
-    },
-    {
       "name": "Дом",
       "capacity": 100000,
       "id": 6

@@ -42,6 +42,7 @@ export class EditCategoryComponent implements OnInit {
     this.categoryService.editCategory(editCategory, editCategory.id)
       .subscribe((c: Category) => {
         this.onCategoryEdit.emit(c);
+        this.showMessage({text: 'Категория изменена', type: 'success'})
       });
   }
 
@@ -56,8 +57,16 @@ export class EditCategoryComponent implements OnInit {
       .subscribe(() => {
           this.onCategoryDeleted.emit(this.currentCategory.id);
           this.form.reset();
+        this.showMessage({text: 'Категория удалена', type: 'danger'})
         }
       );
+  }
+
+  private showMessage(message: Message) {
+    this.message = message;
+    setTimeout(() => {
+      this.message.text = '';
+    }, 2500);
   }
 
 }
