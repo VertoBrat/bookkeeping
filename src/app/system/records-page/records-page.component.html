@@ -7,7 +7,7 @@
 <section class="section" *ngIf="isLoaded">
   <div class="row">
     <div class="col-md-6">
-      <pht-add-event></pht-add-event>
+      <pht-add-event [categories]="categories"></pht-add-event>
     </div>
     <div class="col-md-6">
       <pht-add-category (onCategoryAdd)="newCategoryAdded($event)"></pht-add-category>

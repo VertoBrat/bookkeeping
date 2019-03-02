@@ -1,19 +1,22 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {Message} from '../../../shared/models/message.model';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpParams} from '@angular/common/http';
 import {Category} from '../../shared/models/category.model';
 import {CategoryService} from '../../../shared/services/category.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'pht-edit-category',
   templateUrl: './edit-category.component.html',
   styleUrls: ['./edit-category.component.scss']
 })
-export class EditCategoryComponent implements OnInit {
+export class EditCategoryComponent implements OnInit, OnDestroy {
 
   message: Message;
   form: FormGroup;
+  sub1: Subscription;
+  sub2: Subscription;
 
   @Input('categories') categories: Category[];
   @Output() onCategoryEdit = new EventEmitter<Category>();
@@ -39,10 +42,10 @@ export class EditCategoryComponent implements OnInit {
       this.form.get('limit').value,
       this.currentCategory.id
     );
-    this.categoryService.editCategory(editCategory, editCategory.id)
+    this.sub1 = this.categoryService.editCategory(editCategory, editCategory.id)
       .subscribe((c: Category) => {
         this.onCategoryEdit.emit(c);
-        this.showMessage({text: 'Категория изменена', type: 'success'})
+        this.showMessage({text: 'Категория изменена', type: 'success'});
       });
   }
 
@@ -53,11 +56,11 @@ export class EditCategoryComponent implements OnInit {
   }
 
   deleteCategory() {
-    this.categoryService.deleteCategory(this.currentCategory.id)
+    this.sub2 = this.categoryService.deleteCategory(this.currentCategory.id)
       .subscribe(() => {
           this.onCategoryDeleted.emit(this.currentCategory.id);
           this.form.reset();
-        this.showMessage({text: 'Категория удалена', type: 'danger'})
+          this.showMessage({text: 'Категория удалена', type: 'danger'});
         }
       );
   }
@@ -67,6 +70,11 @@ export class EditCategoryComponent implements OnInit {
     setTimeout(() => {
       this.message.text = '';
     }, 2500);
+  }
+
+  ngOnDestroy(): void {
+    this.sub1 ? this.sub1.unsubscribe() : null;
+    this.sub2 ? this.sub2.unsubscribe() : null;
   }
 
 }

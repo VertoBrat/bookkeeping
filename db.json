@@ -20,7 +20,7 @@
     }
   ],
   "bill": {
-    "value": 100000,
+    "value": 99900,
     "currency": "RUB"
   },
   "categories": [
@@ -38,6 +38,11 @@
       "name": "Продукты",
       "capacity": 400000,
       "id": 8
+    },
+    {
+      "name": "Проверка",
+      "capacity": 1000,
+      "id": 9
     }
   ],
   "events": [
@@ -80,6 +85,22 @@
       "date": "10.06.2017 14:01:58",
       "id": 5,
       "description": "Заправка + проход ТО"
+    },
+    {
+      "type": "outcome",
+      "amount": 1000,
+      "category": 6,
+      "date": "02.03.2019 19:21:54",
+      "description": "проверка",
+      "id": 6
+    },
+    {
+      "type": "outcome",
+      "amount": 100,
+      "category": 9,
+      "date": "02.03.2019 20:26:49",
+      "description": "проверка",
+      "id": 7
     }
   ]
 }
