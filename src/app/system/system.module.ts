@@ -23,6 +23,7 @@ import { HistoryChartComponent } from './history-page/history-chart/history-char
 import { HistoryEventsComponent } from './history-page/history-events/history-events.component';
 import { HistoryDetailComponent } from './history-page/history-detail/history-detail.component';
 import { HistoryFilterComponent } from './history-page/history-filter/history-filter.component';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations:[
@@ -44,12 +45,13 @@ import { HistoryFilterComponent } from './history-page/history-filter/history-fi
     HistoryEventsComponent,
     HistoryDetailComponent,
     HistoryFilterComponent
+
   ],
   imports:[
     CommonModule,
     SharedModule,
-    SystemRoutingModule
-  ],
+    SystemRoutingModule,
+    NgxChartsModule  ],
   providers:[BillService, EventsService]
 })
 export class SystemModule {}

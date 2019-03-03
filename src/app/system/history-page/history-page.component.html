@@ -3,8 +3,13 @@
     Страница истории <span class="sparkline bar"></span>
   </h3>
 </div>
-<pht-history-chart></pht-history-chart>
+<div class="text-center" *ngIf="!isLoaded">Loading...</div>
 
-<pht-history-events></pht-history-events>
+<div  *ngIf="isLoaded">
+  <pht-history-chart [data]="chartData"></pht-history-chart>
 
-<pht-history-filter></pht-history-filter>
+  <pht-history-events [events]="events" [categories]="categories"></pht-history-events>
+
+  <pht-history-filter></pht-history-filter>
+</div>
+
