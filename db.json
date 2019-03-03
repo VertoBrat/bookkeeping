@@ -20,29 +20,24 @@
     }
   ],
   "bill": {
-    "value": 99900,
+    "value": 98900,
     "currency": "RUB"
   },
   "categories": [
     {
       "name": "Дом",
       "capacity": 100000,
-      "id": 6
+      "id": 1
     },
     {
       "name": "Машина",
-      "capacity": 50000,
-      "id": 7
+      "capacity": 5000,
+      "id": 2
     },
     {
       "name": "Продукты",
-      "capacity": 400000,
-      "id": 8
-    },
-    {
-      "name": "Проверка",
-      "capacity": 1000,
-      "id": 9
+      "capacity": 4000,
+      "id": 3
     }
   ],
   "events": [
@@ -89,18 +84,10 @@
     {
       "type": "outcome",
       "amount": 1000,
-      "category": 6,
-      "date": "02.03.2019 19:21:54",
+      "category": 1,
+      "date": "03.03.2019 17:04:57",
       "description": "проверка",
       "id": 6
-    },
-    {
-      "type": "outcome",
-      "amount": 100,
-      "category": 9,
-      "date": "02.03.2019 20:26:49",
-      "description": "проверка",
-      "id": 7
     }
   ]
 }

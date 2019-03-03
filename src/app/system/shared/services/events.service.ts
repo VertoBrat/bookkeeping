@@ -11,8 +11,8 @@ export class EventsService extends BaseApi{
     super(http)
   }
 
-  getEvents(): Observable<PHTEvent> {
-   return this.get<PHTEvent>('events', null);
+  getEvents(): Observable<PHTEvent[]> {
+   return this.get<PHTEvent[]>('events', null);
   }
 
   postEvent(event: PHTEvent): Observable<PHTEvent> {
