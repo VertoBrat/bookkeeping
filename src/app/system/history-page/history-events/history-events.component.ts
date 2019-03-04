@@ -19,11 +19,9 @@ export class HistoryEventsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
-
-  getCategoryName(id: number) {
-    const cat: Category = this.categories.filter((c) => c.id === id).pop();
-    return cat.name;
+    this.events.forEach((e) => {
+      e.catName = this.categories.find((c) => c.id === e.category).name;
+    })
   }
 
   changeCriteria(value: string) {
