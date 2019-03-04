@@ -28,4 +28,8 @@ export class CategoryService extends BaseApi{
   deleteCategory(id:number) {
     return this.delete<Category>('categories/' + id);
   }
+
+  getCategoryById(id: number) {
+    return this.get('categories/'+id, null);
+  }
 }

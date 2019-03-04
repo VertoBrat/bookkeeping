@@ -19,4 +19,8 @@ export class EventsService extends BaseApi{
     return this.post<PHTEvent>('events', event);
   }
 
+  getEventById(id: string): Observable<PHTEvent> {
+    return this.get('events/'+id, null)
+  }
+
 }

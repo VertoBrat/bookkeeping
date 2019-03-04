@@ -24,7 +24,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AuthModule,
     HttpClientModule,
     SharedModule,
-    SystemModule,
     BrowserAnimationsModule,
     NgxChartsModule
   ],
