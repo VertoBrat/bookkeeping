@@ -31,6 +31,8 @@ export class LoginComponent implements OnInit {
     this.route.queryParams.subscribe((params: Params) => {
       if (params['nowCanLogIn']) {
         this.showMessage({text: 'Теперь можете зайти в систему', type: 'success'});
+      } else if (params['accessDenied']) {
+          this.showMessage({text:'Для доступа требуется авторизация!', type: 'danger'})
       }
     });
 

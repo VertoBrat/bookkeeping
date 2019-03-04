@@ -12,6 +12,7 @@ import {AuthService} from './shared/services/auth.service';
 import {SystemModule} from './system/system.module';
 import {CategoryService} from './shared/services/category.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AuthGuard} from './shared/services/auth.guard';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     NgxChartsModule
   ],
-  providers: [UsersService, AuthService, CategoryService],
+  providers: [UsersService, AuthService, CategoryService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
