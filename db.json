@@ -5,22 +5,10 @@
       "email": "wfm@mail.ru",
       "password": "12345678",
       "name": "Администратор"
-    },
-    {
-      "email": "mfocus@mail.ru",
-      "password": "12345678",
-      "name": "Dima",
-      "id": 2
-    },
-    {
-      "email": "test@mail.ru",
-      "password": "12345678",
-      "name": "Gopnik",
-      "id": 3
     }
   ],
   "bill": {
-    "value": 98900,
+    "value": 100000,
     "currency": "RUB"
   },
   "categories": [
@@ -80,14 +68,6 @@
       "date": "02.03.2019 14:01:58",
       "id": 5,
       "description": "Заправка + проход ТО"
-    },
-    {
-      "type": "outcome",
-      "amount": 1000,
-      "category": 1,
-      "date": "03.03.2019 17:04:57",
-      "description": "проверка",
-      "id": 6
     }
   ]
 }
