@@ -9,7 +9,7 @@
   </div>
 </div>
 <section class="section">
-  <div class="row text-center" *ngIf="!isLoaded">Loading...</div>
+  <div class="row text-center" *ngIf="!isLoaded"><pht-loader></pht-loader></div>
   <div class="row" *ngIf="isLoaded">
     <pht-bill-card [bill]="bill" [currency]="currency"></pht-bill-card>
     <pht-currency-card [currency]="currency"></pht-currency-card>

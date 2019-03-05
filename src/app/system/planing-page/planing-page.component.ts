@@ -7,6 +7,7 @@ import {Observable, Subscription} from 'rxjs';
 import {PHTEvent} from '../shared/models/event.model';
 import {Bill} from '../shared/models/bill.model';
 import 'rxjs/rx';
+import {Title} from '@angular/platform-browser';
 
 
 @Component({
@@ -25,7 +26,9 @@ export class PlaningPageComponent implements OnInit, OnDestroy {
 
   constructor(private billService: BillService,
               private categoryService: CategoryService,
-              private eventsService: EventsService) {
+              private eventsService: EventsService,
+              private title: Title) {
+    title.setTitle('Планирование')
   }
 
   ngOnInit() {

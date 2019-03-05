@@ -3,6 +3,7 @@ import {Observable, Subscription} from 'rxjs';
 import {Bill} from '../shared/models/bill.model';
 import {BillService} from '../shared/services/bill.service';
 import 'rxjs/rx';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'pht-bill-page',
@@ -18,7 +19,10 @@ export class BillPageComponent implements OnInit, OnDestroy {
 
   isLoaded = false;
 
-  constructor(private billService: BillService) { }
+  constructor(private billService: BillService,
+              private title: Title) {
+    title.setTitle('Счет')
+  }
 
   ngOnInit() {
     this.sub1 = Observable.combineLatest(

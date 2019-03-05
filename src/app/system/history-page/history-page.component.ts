@@ -5,6 +5,7 @@ import {Observable, Subscription} from 'rxjs';
 import {Category} from '../shared/models/category.model';
 import {PHTEvent} from '../shared/models/event.model';
 import * as moment from 'moment';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'pht-history-page',
@@ -24,7 +25,9 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
   isFiltered = false;
 
   constructor(private categoriesService: CategoryService,
-              private eventsServive: EventsService) {
+              private eventsServive: EventsService,
+              private title: Title) {
+    title.setTitle('История')
   }
 
   ngOnInit() {

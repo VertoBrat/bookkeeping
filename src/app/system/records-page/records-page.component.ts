@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Category} from '../shared/models/category.model';
 import {CategoryService} from '../../shared/services/category.service';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'pht-records-page',
@@ -12,7 +13,10 @@ export class RecordsPageComponent implements OnInit {
   categories: Category[] = [];
   isLoaded = false;
 
-  constructor(private categoryService: CategoryService) { }
+  constructor(private categoryService: CategoryService,
+              private title: Title) {
+    title.setTitle('Создание и изменение')
+  }
 
   ngOnInit() {
     this.categoryService.getCategories()

@@ -9,15 +9,16 @@ import {SharedModule} from './shared/shared.module';
 import {UsersService} from './shared/services/users.service';
 import {HttpClientModule} from '@angular/common/http';
 import {AuthService} from './shared/services/auth.service';
-import {SystemModule} from './system/system.module';
 import {CategoryService} from './shared/services/category.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AuthGuard} from './shared/services/auth.guard';
+import {NotFoundComponent} from './shared/components/not-found/not-found.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,10 @@
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { NotFoundComponent } from './not-found/not-found.component';
+import {LoaderComponent} from './components/loader/loader.component';
 
 @NgModule({
+  declarations:[LoaderComponent],
   imports:[
     FormsModule,
     ReactiveFormsModule,
@@ -12,9 +13,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
   exports:[
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
-  ],
-  declarations: [NotFoundComponent]
+    HttpClientModule,
+    LoaderComponent
+  ]
 })
 export class SharedModule {
 

@@ -14,7 +14,7 @@
   </div>
 </div>
 
-<div class="text-center" *ngIf="!isLoaded">Loading...</div>
+<div class="text-center" *ngIf="!isLoaded"><pht-loader></pht-loader></div>
 
 <div *ngIf="isLoaded">
   <pht-history-chart [data]="chartData"></pht-history-chart>
